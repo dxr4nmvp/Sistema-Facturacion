@@ -21,6 +21,7 @@
 					<th>ID</th>
 					<th>Nombre</th>
 					<th>Correo</th>
+					<th>Usuario</th>
 					<th>Rol</th>
 					<th>Acciones</th>
 				</tr>
@@ -38,10 +39,12 @@
 				<tr>
 					<td><?php echo $data['idusuario']?></td>
 					<td><?php echo $data['nombre']?></td>
-					<td><?php echo $data['correo']?>@gmail.com</td>
+					<td class="td_correo"><?php echo $data['correo']?></td>
+					<td><?php echo $data['usuario']?></td>
 					<td><?php echo $data['rol']?></td>
 					<td>
-						<a href="#" class="link_edit"><i class="fa-solid fa-user-pen"></i></a>
+						<a href="editar_usuario.php?id=<?php echo $data['idusuario']?>" class="link_edit"><i class="fa-solid fa-user-pen"></i></a>
+						<span>|</span>
 						<a href="#" class="link_delete"><i class="fa-solid fa-user-minus"></i></a>
 					</td>
 				</tr>

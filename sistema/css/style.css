@@ -163,12 +163,14 @@ nav li ul li:last-child{
 /*****************************************************************/
 
 .form_register {
-	width: 400px;
+	width: 500px;
 	margin: auto;	
 }
 
 .form_register h1 {
 	color: #3c93b0;
+	text-align: center;
+	width: 100%;
 }
 
 .form_register hr {
@@ -181,7 +183,7 @@ nav li ul li:last-child{
 
 form {
 	background: #fff;
-	width: 500px;
+	width: 100%;
 	margin: auto;
 	padding: 20px 0;
 	border: 1px solid #d1d1d1;
@@ -219,6 +221,10 @@ input,select {
 	border-radius: 6px;
 }
 
+.noitemOne option:first-child{
+	display:none;
+}
+
 .btn_save {
 	font-size: 15pt;
 	font-family: 'Lucida Sans';
@@ -252,8 +258,8 @@ input,select {
 }
 
 .form_register h1 {
-	font-weight: 500;
-	font-family:'Lucida Sans';
+	font-weight: 100;
+	font-family:Sans-Serif;
 	text-align: center;
 }
 
@@ -364,4 +370,12 @@ table tr:hover{
 
 .title-page {
 	margin-top: 30px;
+}
+
+.td_correo {
+	width: 30%;
+}
+
+#container span {
+	font-weight: bold;
 }
