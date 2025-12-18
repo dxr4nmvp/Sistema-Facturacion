@@ -33,3 +33,47 @@ Este proyecto sirve como base para un sistema de ventas/facturación más comple
 - CSS3
 - JavaScript (básico)
 - XAMPP (entorno local)
+
+## Base de datos
+
+Base de datos: facturacion
+
+Tabla principal: usuario
+
+Campos:
+
+idusuario
+
+nombre
+
+correo
+
+usuario
+
+clave
+
+rol
+
+Las contraseñas se almacenan hasheadas.
+
+
+## Usuario inicial (ejemplo)
+
+Crear manualmente desde la base de datos o desde el sistema una vez funcional.
+
+##  ⚠️ Nota importante
+
+Este proyecto aún está en desarrollo.
+Faltan módulos como:
+
+Clientes
+
+Productos
+
+Proveedores
+
+Facturación
+
+Control avanzado de roles
+
+Estos serán agregados en futuras versiones.
