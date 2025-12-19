@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2025 a las 22:52:12
+-- Tiempo de generación: 19-12-2025 a las 07:22:28
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -169,20 +169,22 @@ CREATE TABLE `usuario` (
   `correo` varchar(100) DEFAULT NULL,
   `usuario` varchar(15) DEFAULT NULL,
   `clave` varchar(255) NOT NULL,
-  `rol` int(11) DEFAULT NULL
+  `rol` int(11) DEFAULT NULL,
+  `estatus` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`) VALUES
-(1, 'Administrador', 'alanduran0282@gmail.com', 'admin', '$2y$10$thTnZugO0T3ZmOcAFhgVLO9YKOeULRc3NFEmEFz0k3wrNtdZXw9uS', 1),
-(3, 'Felix', 'felixenmanuelalcantarasanchez@gmail.com', 'f3l1t0', '$2y$10$S1GcMWoq14CeqDpOBfWuaeAnftuJ21NTwZST/tvTDB/L9D51y/eES', 3),
-(4, 'Rodrigo Estrada', 'rodrigo@gmail.com', 'rodrigo', '$2y$10$n/12OiGlh4BO/qy/ObvPuenpwUfAAR4OSguoGuxMCJP1gIXjDqcDC', 3),
-(5, 'Martha Franco', 'martha@gmail.com', 'marth23', '$2y$10$Om/wTIbUgetcKgIY/AVRT.m9IlugD5jOuIcIVzF.Q.nSLi8K/4xEq', 2),
-(6, 'Matias Herrera Cabrera', 'matiasherr@gmail.com', 'matias90', '$2y$10$Ea0wxjYvBfMkLiIm5e6GougSN8PeqB6f56Qb1yAbJt1rZWGC4qT.C', 1),
-(7, 'Cristopher Alejandro Duran Reynoso', 'cristopherduran02@gmail.com', 'dxr4nmvp', '$2y$10$ztMDNEDrOHf2TZYpJz9xGufzxKGNMkWACaENbCgqisKHnrzbSxbsu', 1);
+INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `estatus`) VALUES
+(1, 'Administrador', 'alanduran0282@gmail.com', 'admin', '$2y$10$thTnZugO0T3ZmOcAFhgVLO9YKOeULRc3NFEmEFz0k3wrNtdZXw9uS', 1, 1),
+(3, 'Felix Enmanuel Alcántara', 'felixenmanuelalcantarasanchez@gmail.com', 'f3l1t0', '$2y$10$cTCg6fsXw0GPhxJhl8csIO/qn1LFfaJ2MFArNV7cpvPSidvxwcTHq', 2, 1),
+(6, 'Matias Herrera Cabrera', 'matiasherr@gmail.com', 'matias90', '$2y$10$Ea0wxjYvBfMkLiIm5e6GougSN8PeqB6f56Qb1yAbJt1rZWGC4qT.C', 3, 1),
+(7, 'Cristopher Alejandro Duran Reynoso', 'cristopherduran02@gmail.com', 'dxr4nmvp', '$2y$10$ztMDNEDrOHf2TZYpJz9xGufzxKGNMkWACaENbCgqisKHnrzbSxbsu', 1, 1),
+(8, 'Juan Alcántara', 'buchito@gmail.com', 'JUAN', '$2y$10$zaWwu7QVCmLgtm6hrIIKv.uDecfSxAQOEWYWYfZ5nU6G96riiBw4O', 3, 1),
+(9, 'Carol Cabrera', 'carolcab@gmail.com', 'carol90', '$2y$10$ZxJHk/nB8ybw9skcc/deDOFP.k20IgDlML8VQNp.AbVOSSZ3BXYP6', 2, 0),
+(10, 'Marvin Solares', 'marvin@gmail.com', 'marvin', '$2y$10$920PDHwbLxel5NYgjeosTuOg9QSLg6i3tzI0OwNtloMvUaC9Bs4dm', 3, 1);
 
 --
 -- Índices para tablas volcadas
@@ -307,7 +309,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
