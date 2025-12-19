@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Lista de usuarios</title>
+	<title>Busqueda de usuarios</title>
 	<?php include "includes/scripts.php"; ?>
 </head>
 <body>
@@ -12,17 +12,29 @@
 	<section id="container">
 		<div class="header_lista">
 			<div class="title-page">
-				<h1>Lista de usuarios</h1>
+				<h1>Busqueda de usuarios</h1>
 				<a href="registro_usuario.php" class="btn_new"><i class="fa-solid fa-user-plus"></i></a>
 			</div>
+
+            <?php
+            
+            $busqueda = strtolower($_REQUEST['busqueda']);
+
+            if (empty($busqueda)) {
+                header("Location: lista_usuarios.php");
+                exit;
+            }
+            
+            ?>
 	
 			<div class="buscador">
 				<form action="buscar_usuario.php" method="GET" class="form_search">
-					<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+					<input type="text" name="busqueda" id="busqueda" placeholder="Buscar" value="<?php echo $busqueda?>">
 					<input type="submit" value="Buscar" class="btn_search">
 				</form>
 			</div>
 		</div>
+		
 		<div class="table_container">
 			<table>
 				<thead>
@@ -38,9 +50,25 @@
 
 				<?php 
 				//PAGINADOR
-				$sql_register = mysqli_query($conection, "SELECT count(*) as total_registro from usuario where estatus = 1");
-				$result = mysqli_fetch_assoc($sql_register);
-				$total_registro = $result['total_registro'];
+                $rol = '';
+				if ($busqueda == 'administrador') {
+					$rol = "OR rol '%1%' ";
+				} elseif ($busqueda == 'supervisor') {
+					$rol = "OR rol LIKE '%2%' ";
+				} elseif ($busqueda == 'vendedor') {
+					$rol = "OR rol LIKE '%3%' ";
+				}
+
+				$sql_registe = mysqli_query($conection, "SELECT count(*) as total_registro from usuario
+															where (idusuario LIKE '%$busqueda%' OR
+															nombre LIKE '%$busqueda%' OR
+															correo LIKE '%$busqueda%' OR
+															usuario LIKE '%$busqueda%'
+															$rol )
+															and estatus = 1");
+				$result_register = mysqli_fetch_array($sql_registe);
+				$total_registro = $result_register['total_registro'];
+
 
 				$xPag = 6;
 
@@ -53,16 +81,25 @@
 				$desde = ($pagina-1) * $xPag;
 				$totalPag = ceil($total_registro / $xPag);
 
-				"<tbody>";
+				echo "<tbody>";
 
-				$stmt = $conection->prepare("SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.rol from usuario u inner join rol r on u.rol = r.idrol WHERE u.estatus = 1 ORDER BY idusuario ASC LIMIT ?,?");
-				$stmt->bind_param("ii", $desde, $xPag);
-				$stmt->execute();
-				$result = $stmt->get_result();
 
-				if ($result->num_rows > 0) {
+				$query = mysqli_query($conection, "SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.rol from usuario u inner join rol r on u.rol = r.idrol
+				WHERE
+				(u.idusuario LIKE '%$busqueda%' OR
+				u.nombre LIKE '%$busqueda%' OR
+				u.correo LIKE '%$busqueda%' OR
+				u.usuario LIKE '%$busqueda%' OR
+				r.rol LIKE '%$busqueda%')
 
-					while($data = mysqli_fetch_assoc($result)) {
+				AND
+
+				u.estatus = 1 ORDER BY idusuario ASC LIMIT $desde,$xPag ");
+				$result = mysqli_num_rows($query);
+
+				if ($result > 0) {
+
+					while($data = mysqli_fetch_assoc($query)) {
 				?>
 					<tr>
 						<td><?php echo $data['idusuario']?></td>
