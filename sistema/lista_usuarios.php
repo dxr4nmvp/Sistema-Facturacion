@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 			<?php 
-				$stmt = $conection->prepare("select u.idusuario, u.nombre, u.correo, u.usuario, r.rol from usuario u inner join rol r on u.rol = r.idrol");
+				$stmt = $conection->prepare("select u.idusuario, u.nombre, u.correo, u.usuario, r.rol from usuario u inner join rol r on u.rol = r.idrol WHERE u.estatus = 1");
 				$stmt->execute();
 				$result = $stmt->get_result();
 				
@@ -43,9 +43,14 @@
 					<td><?php echo $data['usuario']?></td>
 					<td><?php echo $data['rol']?></td>
 					<td>
-						<a href="editar_usuario.php?id=<?php echo $data['idusuario']?>" class="link_edit"><i class="fa-solid fa-user-pen"></i></a>
+						<a href="editar_usuario.php?id=" class="link_edit"><i class="fa-solid fa-user-pen"></i></a>
 						<span>|</span>
-						<a href="#" class="link_delete"><i class="fa-solid fa-user-minus"></i></a>
+
+						<?php
+							$protegidos = [1, 7];
+							if (!in_array($data['idusuario'], $protegidos)) {?>
+							<a href="eliminar_confirmar_usuario.php?id=<?php echo $data['idusuario']?>" class="link_delete"><i class="fa-solid fa-user-minus"></i></a>
+						<?php } ?>
 					</td>
 				</tr>
 			<?php

@@ -379,3 +379,136 @@ table tr:hover{
 #container span {
 	font-weight: bold;
 }
+
+
+/********** eliminar_confirmar_usuario.php **********/
+#eliminar_container {
+	min-height: calc(100vh - 80px); /* resta el header */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* CAJA PRINCIPAL */
+.confirm_delete {
+	width: 550px;
+	margin: 20vh auto;
+	background: #FFF;
+	border: 3px solid transparent;
+	border-radius: 8px;
+	box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* TITULO */
+.confirm_delete h1 {
+	font-family: 'GothamBook';
+	color: #e74c3c;
+	font-size: 28px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+/* PREGUNTA */
+.confirm_delete .question {
+	font-family: "GothamBold";
+	text-align: center;
+	font-size: 18px;
+	color: #555;
+	margin-bottom: 20px;
+}
+
+/* INFO USUARIO */
+.user_info {
+	background: #f4f6f7;
+	border-left: 5px solid #393e3c;
+	padding: 15px;
+	margin-bottom: 25px;
+}
+
+.user_info p {
+	font-family: 'Trebuchet MS';
+	font-size: 15px;
+	color: #000000;
+	margin-bottom: 7px;
+}
+
+.user_info strong {
+	font-family: 'Trebuchet MS';
+	font-size: 15px;
+	color: #e74c3c;
+	margin-bottom: 7px;
+}
+
+/* BOTONES */
+.form_actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	width: 100%;
+	border: none;
+}
+
+/* CANCELAR */
+.btn_cancel {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	background: #7f8c8d;
+	color: #fff;
+	padding: 10px 25px;
+	width: 100px;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn_cancel:hover {
+	background: #6c7a7b;
+}
+
+/* ELIMINAR */
+.btn_delete {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	padding: 10px 25px;
+	background: #e74c3c;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn_delete:hover {
+	background: #c0392b;
+}
+
+/* ADICIONALES */
+.icon_warning {
+	font-size: 48px;
+	color: #e74c3c;
+	text-align: center;
+	margin-bottom: 10px;
+	opacity: 0.8;
+}
+
+.warning_text {
+	text-align: center;
+	font-size: 14px;
+	color: #888;
+	margin-bottom: 20px;
+}
+
+.user_info .user_main {
+	font-size: 22px;
+	font-weight: 700;
+	color: #d60b52;
+	text-align: center;
+	margin-bottom: 10px;
+}
