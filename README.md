@@ -75,3 +75,20 @@ Facturación
 Control avanzado de roles
 
 Estos serán agregados en futuras versiones.
+
+## 📦 Versiones del sistema
+
+### v1.1 – Gestión completa de usuarios
+- Crear usuarios
+- Listar usuarios
+- Editar usuarios
+- Eliminar usuarios con confirmación
+- Protección de usuarios críticos
+- Mejoras visuales en la interfaz
+- Filtro por usuarios activos
+
+### Próximo
+### v1.2 – Navegación y búsqueda
+- Paginador
+- Buscador
+- Paginación de resultados
