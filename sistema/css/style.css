@@ -51,7 +51,9 @@ span {
 header{
 	position: fixed;
 	width: 100%;
+	z-index: 1000;
 }
+
 .header{
 	color: #FFF;
 	background: #0a4661;
@@ -269,6 +271,10 @@ input,select {
 	display: inline-block;
 }
 
+.table_container {
+	height: auto;
+}
+
 .btn_new {
 	display: inline-block;
 	background: #058167;
@@ -290,13 +296,16 @@ table {
 table th {
 	text-align: start;
 	padding: 10px;
+	font-size: 14px;
 	background: #0B7D6E;
 	color: #FFFFFF;
 }
 
 table td {
 	color: #212529;
-	padding: 5px;
+	padding: 3px;
+	font-size: 17px;
+	text-align: center;
 }
 
 table tr:nth-child(odd){
@@ -329,28 +338,19 @@ table tr:hover{
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	margin-bottom: 25px;
 }
 
 .title-page h1 {
 	font-family: sans-serif;
-	font-size: 32px;
+	font-size: 22px;
 	font-weight: 600;
 	color: #0B4F6C;
 	position: relative;
 	padding-bottom: 8px;
+	font-size: 20px;
+    margin: 5px 0 10px 0;
 }
 
-.title-page h1::after {
-	content: "";
-	width: 60px;
-	height: 4px;
-	background: #0B7D6E;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	border-radius: 2px;
-}
 
 .btn_new {
 	background: #198754;
@@ -369,7 +369,7 @@ table tr:hover{
 }
 
 .title-page {
-	margin-top: 30px;
+	margin-top: 5px;
 }
 
 .td_correo {
@@ -378,6 +378,10 @@ table tr:hover{
 
 #container span {
 	font-weight: bold;
+}
+
+.td_acciones {
+	text-align: start;
 }
 
 
@@ -511,4 +515,34 @@ table tr:hover{
 	color: #d60b52;
 	text-align: center;
 	margin-bottom: 10px;
+}
+
+/***** LISTA_USUARIOS.PHP PAGINADOR *****/
+.paginador ul {
+	padding: 15px;
+	list-style: none;
+	background: #fff;
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.paginador a, .page_selected{ 
+	color: #428bca;
+	border: 1px solid #ddd;
+	padding: 5px;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	width: 35px;
+}
+
+.paginador a:hover {
+	background: #ddd;
+}
+
+.page_selected {
+	color: #fff;
+	background: #428bca;
+	border: 1px solid #428bca;
 }

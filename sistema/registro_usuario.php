@@ -73,7 +73,7 @@ if (!empty($_POST)) {
                     <label for="rol">Tipo de usuario</label>
 
                     <?php
-                    $stmt = $conection->prepare("SELECT * FROM rol");
+                    $stmt = $conection->prepare("SELECT * FROM rol order by idrol DESC");
                     $stmt->execute();
                     $result = $stmt->get_result();
 

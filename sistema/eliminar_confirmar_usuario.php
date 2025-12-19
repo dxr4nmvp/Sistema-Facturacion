@@ -3,6 +3,12 @@
 
     if (!empty($_POST)) {
 
+        $protegidos = [1,7];
+
+        if (in_array($_POST['idusuario'], $protegidos)) {
+            header("Location: lista_usuarios.php");
+            exit;
+        }
         $idusuario = $_POST['idusuario'];
 
         /*
@@ -16,13 +22,13 @@
 
         if ($stmt_delete->affected_rows > 0) {
             header("Location: lista_usuarios.php");
+            exit;
         } else {
             $alert = "<p class='msg_error'>Error al eliminar usuario</p>";
         }
     }
 
-        $protegidos = [1,7];
-
+    $protegidos = [1,7];
     if (empty($_REQUEST['id']) or in_array($_REQUEST['id'], $protegidos)) {
         header("Location: lista_usuarios.php");
         exit;

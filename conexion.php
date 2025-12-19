@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
+$host = 'localhost:3307';
 $user = 'root';
 $password = '';
-$db = 'facturacion';
+$db = 'facturacion2';
 
 $conection = @mysqli_connect($host, $user, $password, $db);
 
