@@ -7,7 +7,6 @@
 					?>
 					<a href="#">Usuarios</a>
 					<ul>
-
 						<li><a href="registro_usuario.php">Nuevo Usuario</a></li>
 						<li><a href="lista_usuarios.php">Lista de Usuarios</a></li>
 					</ul>
