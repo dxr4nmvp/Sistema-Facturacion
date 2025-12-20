@@ -1,4 +1,9 @@
-<?php include "../conexion.php"; ?>
+<?php
+session_start();
+if ($_SESSION['rol'] != 1) {
+    header("Location: ../");
+}
+include "../conexion.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
