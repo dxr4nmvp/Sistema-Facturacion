@@ -52,7 +52,7 @@
 				//PAGINADOR
                 $rol = '';
 				if ($busqueda == 'administrador') {
-					$rol = "OR rol '%1%' ";
+					$rol = "OR rol  LIKE '%1%' ";
 				} elseif ($busqueda == 'supervisor') {
 					$rol = "OR rol LIKE '%2%' ";
 				} elseif ($busqueda == 'vendedor') {
@@ -124,6 +124,10 @@
 				?>
 				</tbody>
 			</table>
+
+		<?php
+			if ($total_registro != 0 ) {
+		?>
 		</div>
 		<div class="paginador">
 			<ul>
@@ -131,8 +135,8 @@
 				if ($pagina != 1) {
 
 				?>
-				<li><a href="?pagina=<?php echo 1; ?>">|<</a></li>
-				<li><a href="?pagina=<?php echo $pagina-1; ?>"><<</a></li>
+				<li><a href="?pagina=<?php echo 1; ?>&busqueda=<?php echo $busqueda ?>">|<</a></li>
+				<li><a href="?pagina=<?php echo $pagina-1; ?>&busqueda=<?php echo $busqueda ?>"><<</a></li>
 
 				<?php
 				}
@@ -140,7 +144,7 @@
 					if ($i == $pagina) {
 						echo '<li class="page_selected">'.$i.'</li>';
 					} else {
-						echo '<li><a href="?pagina='.$i.'">'.$i.'</a></li>';
+						echo '<li><a href="?pagina='.$i.'&busqueda='.$busqueda.'">'.$i.'</a></li>';
 					}
 				}
 
@@ -148,9 +152,10 @@
 				?>
 
 
-				<li><a href="?pagina=<?php echo $pagina+1 ?>">>></a></li>
-				<li><a href="?pagina=<?php echo $totalPag ?>">>|</a></li>
+				<li><a href="?pagina=<?php echo $pagina+1 ?>&busqueda=<?php echo $busqueda ?> ">>></a></li>
+				<li><a href="?pagina=<?php echo $totalPag ?>&busqueda=<?php echo $busqueda ?> ">>|</a></li>
 				<?php
+				}
 				}
 				?>
 			</ul>

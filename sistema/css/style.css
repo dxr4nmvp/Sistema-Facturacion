@@ -596,3 +596,152 @@ table tr:hover{
 	margin-left: 8px;
 	width: auto; /* IMPORTANTE */
 }
+
+
+/****** BUSCAR_USUARIOS.PHP ******/
+
+/* Encabezado de búsqueda con badge */
+.search_header {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search_header h1 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.search_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search_badge {
+    background: rgba(255,255,255,0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.search_term {
+    background: #fff;
+    color: #ff6b6b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn_clear_search {
+    background: rgba(255,255,255,0.9);
+    color: #ff6b6b;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+.btn_clear_search:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #ff6b6b;
+    margin-right: 5px;
+}
+
+.breadcrumb span {
+    color: #6c757d;
+    margin: 0 5px;
+}
+
+.breadcrumb .current {
+    color: #495057;
+    font-weight: bold;
+}
+
+/* Tabla de resultados de búsqueda */
+.search_results table th {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+    color: #fff;
+    border-bottom: 3px solid #ff5252;
+}
+
+.search_results table {
+    border: 2px solid #ff9a56;
+    box-shadow: 0 4px 6px rgba(255,107,107,0.1);
+}
+
+.search_results table tr:hover {
+    background: #fff3e0;
+}
+
+/* Resaltar coincidencias */
+.highlight {
+    background: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #856404;
+}
+
+/* Mensaje cuando no hay resultados */
+.no_results {
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.no_results i {
+    font-size: 64px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.no_results h3 {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.no_results p {
+    color: #adb5bd;
+    margin-bottom: 20px;
+}
+
+/* Paginador para búsqueda */
+.search_results .paginador a, 
+.search_results .page_selected {
+    color: #ff6b6b;
+    border-color: #ff9a56;
+}
+
+.search_results .paginador a:hover {
+    background: #fff3e0;
+}
+
+.search_results .page_selected {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+    border-color: #ff6b6b;
+}
